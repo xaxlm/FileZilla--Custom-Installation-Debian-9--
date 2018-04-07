@@ -1,8 +1,8 @@
 #!/bin/bash
-# Última actualización: 23/08/2017
+# Última actualización: 07/04/2018
 cd /
 # Se descarga FileZilla
-wget https://iweb.dl.sourceforge.net/project/filezilla/FileZilla_Client/3.27.1/FileZilla_3.27.1_x86_64-linux-gnu.tar.bz2
+wget https://dl1.cdn.filezilla-project.org/client/FileZilla_3.32.0_x86_64-linux-gnu.tar.bz2
 # se confirma la existencia de dependencias necesarias
 echo 'Buscando dependencia libpng14...'
 if [ -d /usr/include/libpng14/ ];
@@ -61,15 +61,15 @@ libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpugixml1v5 libsqlite3-0 
 libwxgtk3.0-0v5 xdg-utils
 echo 'Dependencias instaladas...'
 sleep 2
-mv /FileZilla_3.27.1_x86_64-linux-gnu.tar.bz2 /usr/local/$DIRINST
-tar jxvf FileZilla_3.27.1_x86_64-linux-gnu.tar.bz2
+mv /FileZilla_3.32.0_x86_64-linux-gnu.tar.bz2 /usr/local/$DIRINST
+tar jxvf FileZilla_3.32.0_x86_64-linux-gnu.tar.bz2
 mv FileZilla3 /usr/local/$DIRINST/filezilla3
 #
 #App a Menú
 cd /usr/share/applications/
 touch filezilla.desktop
 echo '[Desktop Entry]' > filezilla.desktop
-echo 'Version=3.27.1' >> filezilla.desktop
+echo 'Version=3.32.0' >> filezilla.desktop
 echo 'Name=FileZilla' >> filezilla.desktop
 echo 'Comment="Gestor torrent' >> filezilla.desktop
 echo 'Exec=/usr/local/'$DIRINST'/filezilla3/bin/filezilla' >> filezilla.desktop
@@ -112,7 +112,7 @@ chmod 744 remove.sh
 touch README.txt
 echo 'FileZilla' > README:txt
 echo 'Idioma=es' >> README.txt
-echo 'Version=3.27.1' >> README.txt
+echo 'Version=3.32.0' >> README.txt
 echo 'Arquitectura=x86_64' >> README.txt
 echo 'Esta es una instalación no invasiva.' >> README.txt
 echo 'Para desinstalar ejecute el fichero remove.sh como root.' >> README.txt
@@ -137,7 +137,7 @@ echo -ne '[====================================>   ](91.64%)\r';sleep 0.2
 echo -ne '[=======================================>](100.00%)\r';sleep 0.2
 echo -ne '\n'
 rm -rf /usr/local/libpng12-0_1.2.50-2+deb8u3_amd64.deb
-rm -rf /usr/local/$DIRINST/FileZilla_3.27.1_x86_64-linux-gnu.tar.bz2
+rm -rf /usr/local/$DIRINST/FileZilla_3.32.0_x86_64-linux-gnu.tar.bz2
 if [ -d /home/*/.cache/filezilla/ ];
 	then
 		rm -rf /home/*/.cache/filezilla/
